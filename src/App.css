@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+
+
+
+body {
+  background-color: #1e2931;
+  color: #fff;
+  font-family: Verdana, sans-serif;
+  font-style: normal;
+  line-height: 1.5;
+  margin: 0 auto;
+  width: 90%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* .movies {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.movies {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.movie-card {
+  position: relative;
+  height: 500px;
+  width: 320px;
+  cursor: pointer;
+}
+
+.movie-thumbnail {
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-thumbnail img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+.movie-thumbnail:hover img {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+.movie-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: normal;
+  font-variant: small-caps;
+  margin: 0;
+  display: none;
+  z-index: 1;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem 1rem;
+}
+
+.movie-card:hover .movie-title {
+  display: block;
+  font-size: 40px;
+  font-weight: 600;
+  font-style: italic;
+  text-decoration: underline;
+  font-family: cursive;
   color: white;
+  background: transparent
+}
+.movie-card:hover img{
+opacity: .2;
+}
+.search-title {
+  font-size: 1.5rem;
+  margin: 50px auto;
+  max-width: 80%;
 }
 
-.App-link {
-  color: #61dafb;
+.search {
+  background-color: #ffffff;
+  color: #898F9C;
+  padding: 15px 0px;
+  text-align: center;
+  width: 100%;
+  font-size: 19px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
